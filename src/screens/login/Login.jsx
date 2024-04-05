@@ -7,6 +7,7 @@ import axios from 'axios';
 import Button from '../../components/Button';
 //Styles
 import Styles from '../../styles/Styles';
+import { esp, eng } from '../../components/Language';
 
 const Login = () => {
   const navigation = useNavigation();
@@ -27,25 +28,27 @@ const Login = () => {
     }
   };
 
+  const language = esp();
+
   return (
     <ImageBackground
       source={require('../../../assets/images/login-background.jpg')}
       style={Styles.LoginBackground}>
       {/* Login Text */}
       <View style={Styles.LoginTextBox}>
-        <Text style={Styles.WhiteSubtitle}> ¡Hey! Bienvenido a </Text>
-        <Text style={Styles.WhiteTitle}> Mike BarberStudio </Text>
+        <Text style={Styles.WhiteSubtitle}> {language.hello} </Text>
+        <Text style={Styles.WhiteTitle}> {language.name} </Text>
       </View>
 
       {/* Login Data */}
       <View style={Styles.LoginData}>
         <TextInput
-          placeholder='Ingrese su email'
+          placeholder={language.mailInput}
           onChangeText={text => setEmail(text)}
           style={Styles.LoginInput}
           autoCapitalize="none" />
         <TextInput
-          placeholder='Ingrese su contraseña'
+          placeholder={language.passInput}
           style={Styles.LoginInput}
           onChangeText={text => setPassword(text)}
           secureTextEntry={true}
@@ -60,11 +63,11 @@ const Login = () => {
       {/* Login Options */}
       <View style={Styles.LoginOptions}>
         <Pressable onPress={() => { console.log('Crear cuenta') }}>
-          <Text style={Styles.WhiteText}>Crear una cuenta</Text>
+          <Text style={Styles.WhiteText}>{language.createAccount}</Text>
         </Pressable>
         <Text style={Styles.WhiteText}> | </Text>
         <Pressable onPress={() => { console.log('Olvidaste tu contraseña') }}>
-          <Text style={Styles.WhiteText}>¿Olvidaste tu contraseña?</Text>
+          <Text style={Styles.WhiteText}>{language.forgotPassword}</Text>
         </Pressable>
       </View>
 
