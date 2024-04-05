@@ -80,10 +80,17 @@ export default StyleSheet.create({
         // marginTop: '25%',
         alignItems: 'center',
         justifyContent: 'space-between',
-        marginHorizontal:'10%',
-        flexDirection:'row',
-        
+        marginHorizontal: '10%',
+        flexDirection: 'row',
+
     },
+
+    LoginError: {
+        fontFamily: 'Normal',
+        color: '#FF0000',
+        fontSize: 15,
+        marginTop:8
+    }
 
     //------- Components Styles -----------
 })

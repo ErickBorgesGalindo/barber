@@ -13,17 +13,22 @@ const Login = () => {
   const navigation = useNavigation();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [badInfo, setBadInfo] = useState(false);
 
   const handleLogin = async () => {
+    // const hashedPassword = await bcrypt.hash(password, 10);
     try {
+      setBadInfo(false);
       console.log(password);
       const response = await axios.post('http://localhost:3000/login', {
         email,
         password
       });
 
-      navigation.navigate('Home'); // Navegar a la pantalla principal
+      navigation.navigate('Home');
+
     } catch (error) {
+      setBadInfo(true);
       console.error(error);
     }
   };
@@ -42,6 +47,11 @@ const Login = () => {
 
       {/* Login Data */}
       <View style={Styles.LoginData}>
+        {
+          badInfo ?
+            <Text style={Styles.LoginError}>{language.badInfo}</Text> :
+            null
+        }
         <TextInput
           placeholder={language.mailInput}
           onChangeText={text => setEmail(text)}

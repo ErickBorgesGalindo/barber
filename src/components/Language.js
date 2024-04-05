@@ -7,6 +7,7 @@ export function esp() {
     const loginButton = 'Log in';
     const createAccount = 'Crear una cuenta';
     const forgotPassword = '¿Olvidaste tu contraseña?';
+    const badInfo = 'Información incorrecta';
 
     return({
         hello,
@@ -15,7 +16,8 @@ export function esp() {
         passInput,
         loginButton,
         createAccount,
-        forgotPassword
+        forgotPassword,
+        badInfo
     })
 };
 
@@ -28,6 +30,7 @@ export function eng() {
     const loginButton = 'Log in';
     const createAccount = 'Create an Account';
     const forgotPassword = 'Forgot your password?';
+    const badInfo = 'Bad Information';
     
     return({
         hello,
@@ -36,6 +39,7 @@ export function eng() {
         passInput,
         loginButton,
         createAccount,
-        forgotPassword
+        forgotPassword,
+        badInfo
     })
 };
